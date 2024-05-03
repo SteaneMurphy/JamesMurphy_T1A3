@@ -14,11 +14,11 @@ This application runs in the terminal or command line. It is a simulated fantasy
 
 ## APPLICATION FEATURES
 
-## <span style="color:blue">MAJOR FEATURES</span>
+## ${\textsf{\color{blue}MAJOR FEATURES}}$
 
 ### _NEW USER SIGNUP_
 
-![GitHubProfilePicture](./docs/SignUp.png)
+![SignUpFlowchart](./docs/SignUp.png)
 
 This feature allows the user to create a new account. This account is checked against existing character username/server combinations to verify that the game character exists.
 
@@ -39,7 +39,7 @@ The user is then returned to the main menu to log in.
 
 ### _USER LOG IN_
 
-![GitHubProfilePicture](./docs/LogIn.png)
+![LogInFlowchart](./docs/LogIn.png)
 
 This feature prompts the user to log into their account.
 
@@ -51,7 +51,7 @@ If a correct match is found, the user is sent to the logged in menu screen.
 
 ### _MARKETPLACE: DISPLAY ITEMS_
 
-![GitHubProfilePicture](./docs/MarketList.png)
+![MarketListingsFlowchart](./docs/MarketList.png)
 
 This feature lists all items for sale on the marketplace. The user can also buy an item directly from this screen.
 
@@ -65,7 +65,7 @@ The user can refuse to purchase an item and return to the item listing or return
 
 ### _MARKETPLACE: USER LIST ITEM_
 
-![GitHubProfilePicture](./docs/ListItem.png)
+![ItemListFlowchart](./docs/ListItem.png)
 
 This feature allows the user to list an item for sale on the marketplace.
 
@@ -75,11 +75,11 @@ The user's account information (JSON file) is queried and checked to see if the 
 
 Whilst an item is unusable, it cannot be traded, sold or used in the game (just a boolean in this case) to prevent item fraud.
 
-## <span style="color:blue">MINOR FEATURES</span>
+## ${\textsf{\color{blue}MINOR FEATURES}}$
 
 ### _MARKETPLACE: DISPLAY INVENTORY_
 
-![GitHubProfilePicture](./docs/Inventory.png)
+![InventoryFlowchart](./docs/Inventory.png)
 
 This minor feature will display all items in the player's inventory on the screen. The items are listed by querying the account details in the account JSON file.
 
@@ -87,7 +87,7 @@ The user is returned to the logged in menu, after pressing a key.
 
 ### _MARKETPLACE: DISPLAY CURRENCY_
 
-![GitHubProfilePicture](./docs/Currency.png)
+![CurrencyFlowchart](./docs/Currency.png)
 
 This minor feature will display the current currency amount possessed by the user. This value is checked by querying the account details in the account JSON file.
 
@@ -98,5 +98,17 @@ The user is returned to the logged in menu, after pressing a key.
 ## HELP
 
 ## STYLE GUIDES
+
+<img src="./docs/PythonLogo.png" width="200" />
+
+This project uses the following python style guides:
+
+__PEP8__ - For code formatting, language usuage and best practice
+
+- [**Link To PEP8 Guide**](https://peps.python.org/pep-0008/)
+
+__PEP257__ - For docstring formatting best practice
+
+- [**Link To PEP257 Guide**](https://peps.python.org/pep-0257/)
 
 ## REFERENCES
