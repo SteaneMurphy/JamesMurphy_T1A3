@@ -124,15 +124,25 @@ I created a column for each stage of a feature's development:
 
 Each feature has its own issue or card. Under this card are relevant screenshots, development notes and commit references. Alongside this, the feature is broken down into multiple sub-tasks and listed as a checklist against the card.
 
-### ${\textsf{\color{darkorange}F1 }}$ _NEW USER SIGNUP_
+### ${\textsf{\color{darkorange}F1 }}$ _MENUS_
 
-### ${\textsf{\color{darkorange}F2 }}$ _USER LOG IN_
+[**Link To task**](https://github.com/users/SteaneMurphy/projects/1/views/1?pane=issue&itemId=61854427)
+![TaskMenu](./docs/TaskMenu.PNG)
 
-### ${\textsf{\color{darkorange}F3 }}$ _MARKETPLACE: DISPLAY ITEMS_
+[**Link To task**](https://github.com/users/SteaneMurphy/projects/1/views/1?pane=issue&itemId=61854552)
+![TaskMenuLogged](./docs/TaskLoggedMenu.PNG)
 
-### ${\textsf{\color{darkorange}F4 }}$ _MARKETPLACE: USER LIST ITEM_
+### ${\textsf{\color{darkorange}F2 }}$ _NEW USER SIGNUP_
 
-### ${\textsf{\color{darkorange}F5 }}$ _DISPLAY INVENTORY / DISPLAY CURRENCY_
+![TaskSignup](./docs/TaskSignup.PNG)
+
+### ${\textsf{\color{darkorange}F3 }}$ _USER LOG IN_
+
+### ${\textsf{\color{darkorange}F4 }}$ _MARKETPLACE: DISPLAY ITEMS_
+
+### ${\textsf{\color{darkorange}F5 }}$ _MARKETPLACE: USER LIST ITEM_
+
+### ${\textsf{\color{darkorange}F6 }}$ _DISPLAY INVENTORY / DISPLAY CURRENCY_
 
 ## ${\textsf{\color{blue}HELP}}$
 
