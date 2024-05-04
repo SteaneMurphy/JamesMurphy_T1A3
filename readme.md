@@ -1,6 +1,6 @@
 # JAMES MURPHY TERMINAL PROJECT
 
-## PROJECT REPOSITORY - JAMESMURPHY_T1A3
+## ${\textsf{\color{blue}PROJECT REPOSITORY - JAMESMURPHY T1A3}}$
 
 [**Link To GitHub Repository**](https://github.com/SteaneMurphy/Terminal-Marketplace)
 
@@ -8,13 +8,13 @@ Clone (HTTPS): https://github.com/SteaneMurphy/Terminal-Marketplace.git
 
 ![GitHubProfilePicture](./docs/GitHubProfilePic.jpg)
 
-## PROJECT DESCRIPTION
+## ${\textsf{\color{blue}PROJECT DESCRIPTION}}$
 
 This application runs in the terminal or command line. It is a simulated fantasy marketplace, similar to what you would find in a video game. The marketplace facilitates users buying and selling items to one another
 
-## APPLICATION FEATURES
+## ${\textsf{\color{blue}APPLICATION FEATURES}}$
 
-## ${\textsf{\color{blue}MAJOR FEATURES}}$
+### ${\textsf{\color{darkorange}MAJOR FEATURES}}$
 
 ### _NEW USER SIGNUP_
 
@@ -75,9 +75,9 @@ The user's account information (JSON file) is queried and checked to see if the 
 
 Whilst an item is unusable, it cannot be traded, sold or used in the game (just a boolean in this case) to prevent item fraud.
 
-## ${\textsf{\color{blue}MINOR FEATURES}}$
+### ${\textsf{\color{darkorange}MINOR FEATURES}}$
 
-### _MARKETPLACE: DISPLAY INVENTORY_
+### _DISPLAY INVENTORY_
 
 ![InventoryFlowchart](./docs/Inventory.png)
 
@@ -85,7 +85,7 @@ This minor feature will display all items in the player's inventory on the scree
 
 The user is returned to the logged in menu, after pressing a key.
 
-### _MARKETPLACE: DISPLAY CURRENCY_
+### _DISPLAY CURRENCY_
 
 ![CurrencyFlowchart](./docs/Currency.png)
 
@@ -93,11 +93,57 @@ This minor feature will display the current currency amount possessed by the use
 
 The user is returned to the logged in menu, after pressing a key.
 
-## IMPLEMENTATION PLAN
+## ${\textsf{\color{blue}IMPLEMENTATION PLAN}}$
 
-## HELP
+![GithubProjectHeader](./docs/GithubProjectsHeader.PNG)
 
-## STYLE GUIDES
+[**Link To Project Board**](https://github.com/users/SteaneMurphy/projects/1/views/1)
+
+
+The software used to facilitate production and manage the project was _github projects_. This software works like a traditional Kanban board where tasks, issues or tickets can be created and listed under a parent category (column).
+
+![ProjectOverview](./docs/Project_1.PNG)
+
+I created a column for each stage of a feature's development:
+
+-  _Backlog_: features are listed here if they have not yet started development
+
+![ProjectBacklog](./docs/ProjectBacklog.PNG)
+
+- _In Development_: features are moved here when they are being actively worked on (ie; coding has begun)
+
+![ProjectDevelopment](./docs/ProjectDevelopment.PNG)
+
+- _Testing_: features are moved to this column when development is finished and the feature needs to be tested
+
+![ProjectTesting](./docs/ProjectTesting.PNG)
+
+- _Completed_: features are moved to this column when it has been fully implemented and tested, and that no more work is to be done to it
+
+![ProjectCompleted](./docs/ProjectCompleted.PNG)
+
+Each feature has its own issue or card. Under this card are relevant screenshots, development notes and commit references. Alongside this, the feature is broken down into multiple sub-tasks and listed as a checklist against the card.
+
+### ${\textsf{\color{darkorange}F1 }}$ _NEW USER SIGNUP_
+
+### ${\textsf{\color{darkorange}F2 }}$ _USER LOG IN_
+
+### ${\textsf{\color{darkorange}F3 }}$ _MARKETPLACE: DISPLAY ITEMS_
+
+### ${\textsf{\color{darkorange}F4 }}$ _MARKETPLACE: USER LIST ITEM_
+
+### ${\textsf{\color{darkorange}F5 }}$ _DISPLAY INVENTORY / DISPLAY CURRENCY_
+
+## ${\textsf{\color{blue}HELP}}$
+
+_to add_
+
+- steps to install the app
+- dependencies
+- system/hardware requirements
+- how to use any command line arguments
+
+## ${\textsf{\color{blue}STYLE GUIDES}}$
 
 <img src="./docs/PythonLogo.png" width="200" />
 
@@ -111,4 +157,4 @@ __PEP257__ - For docstring formatting best practice
 
 - [**Link To PEP257 Guide**](https://peps.python.org/pep-0257/)
 
-## REFERENCES
+## ${\textsf{\color{blue}REFERENCES}}$
