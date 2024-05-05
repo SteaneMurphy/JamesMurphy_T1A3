@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Thunderfury, Blessed Blade of the Windseeker",
+        "price": 10700,
+        "username": "Grumblefizz Goodbarrel",
+        "duration": 7
+    },
+    {
+        "name": "leather boots",
+        "price": 110,
+        "username": "Grumblefizz Goodbarrel",
+        "duration": 3
+    },
+    {
+        "name": "Luminous Locket of Serenity",
+        "price": 8900,
+        "username": "Twinkletoe McSparklepants",
+        "duration": 7
+    },
+    {
+        "name": "cloth sandals",
+        "price": 60,
+        "username": "Twinkletoe McSparklepants",
+        "duration": 3
+    },
+    {
+        "name": "celestial silk robes",
+        "price": 549,
+        "username": "Twinkletoe McSparklepants",
+        "duration": 3
+    },
+    {
+        "name": "glittering mace",
+        "price": 630,
+        "username": "Gigglesnort Goblingrub",
+        "duration": 3
+    },
+    {
+        "name": "Rainbow Ring of Multifaceted Powers",
+        "price": 4350,
+        "username": "Gigglesnort Goblingrub",
+        "duration": 7
+    }
+]

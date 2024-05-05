@@ -12,8 +12,8 @@
             {
                 "small sword": false, 
                 "lockpick": false, 
-                "Thunderfury, Blessed Blade of the Windseeker": false, 
-                "leather boots": false
+                "Thunderfury, Blessed Blade of the Windseeker": true, 
+                "leather boots": true
             }
         ]
     },
@@ -29,10 +29,10 @@
         [
             {
                 "gnarled staff": false, 
-                "celestial silk robes": false, 
+                "celestial silk robes": true, 
                 "mana potion": false, 
-                "cloth sandals": false, 
-                "Luminous Locket of Serenity": false
+                "cloth sandals": true, 
+                "Luminous Locket of Serenity": true
             }
         ]
     },
@@ -47,10 +47,10 @@
         "items": 
         [
             {
-                "glittering mace": false, 
+                "glittering mace": true, 
                 "steel boots": false, 
                 "heavy breastplate": false, 
-                "Rainbow Ring of Multifaceted Powers": false
+                "Rainbow Ring of Multifaceted Powers": true
             }
         ]
     }
