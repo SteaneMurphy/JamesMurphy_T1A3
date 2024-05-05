@@ -27,15 +27,17 @@ class Menu():
             selection = input(" >>> ")
             self.process_menu_selection(selection)
         else:
-            print("\n ******************************************* WELCOME ***")
+            print("\n ******************************************** LOGGED ***")
             print(" *                                                     *")
-            print(" *     Welcome to the Arcane Emporium marketplace!     *")
+            print(" *      Welcome Back! What would you like to do?       *")
             print(" *                                                     *")
             print(" *******************************************************\n")
             print(" \n --MENU-------------------------------------------------")
-            print(" 1. Log In With Exising Account")
-            print(" 2. Sign Up For A New Account")
-            print(" 3. Quit Application\n")
+            print(" 1. Display Currency")
+            print(" 2. Display Inventory")
+            print(" 3. Open Marketplace")
+            print(" 4. Sell Item")
+            print(" 5. Log Out")
 
     def process_menu_selection(self, selection):
         print(selection)
