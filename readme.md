@@ -126,6 +126,8 @@ Each feature has its own issue or card. Under this card are relevant screenshots
 
 ### ${\textsf{\color{darkorange}F1 }}$ _MENUS_
 
+This feature will display either the main menu or the logged-in menu to the user. The menu will be displayed as a numbered list of options that the user can select from. Once selected, a switch statement will call the relevant function.
+
 [**Link To task**](https://github.com/users/SteaneMurphy/projects/1/views/1?pane=issue&itemId=61854427)
 ![TaskMenu](./docs/TaskMenu.PNG)
 
@@ -133,25 +135,46 @@ Each feature has its own issue or card. Under this card are relevant screenshots
 ![TaskMenuLogged](./docs/TaskLoggedMenu.PNG)
 
 ### ${\textsf{\color{darkorange}F2 }}$ _NEW USER SIGNUP_
+
+This feature will allow a user to sign up to the marketplace. The user is prompted for input for the following fields (username, server name, first name, last name, email, password, confirmed password). The following fields are checked against validation requirements (email, password, confirm password). The following fields are checked against the server database (JSON file) to see if user is a player (username, server name).
+
+If these fields pass validation, a new account class is created, its attributes populated and the data added to the account database (JSON file) as a new account.
+
 [**Link To task**](https://github.com/users/SteaneMurphy/projects/1/views/1?pane=issue&itemId=61853779)
 ![TaskSignup](./docs/TaskSignup.PNG)
 
 ### ${\textsf{\color{darkorange}F3 }}$ _USER LOG IN_
+
+This feature will allow an existing user to log into the marketplace. The user is prompted for input for the following fields (username or email, password). These fields are checked against the account database (JSON file). If the username/email exists and the password matches the password stored on the account details, the user is presented with the logged-in menu.
 
 [**Link To task**](https://github.com/users/SteaneMurphy/projects/1/views/1?pane=issue&itemId=61853782)
 ![TaskLogin](./docs/TasksLogin.PNG)
 
 ### ${\textsf{\color{darkorange}F4 }}$ _MARKETPLACE: DISPLAY ITEMS_
 
+This feature will display all available items for sale in the marketplace to the user. The marketplace database (JSON file) is queried and each item in the file is displayed and numbered on the screen.
+
+The user is prompted for input and can select any of the items for purchase. The user is prompted to confirm their choice. The currency requested for the item is checked against the user account information. If the user has sufficient currency, the item is removed from the marketplace and the seller's account, transferred to the user account, and the currency amounts of both the buyer and seller and adjusted.
+
+These values are adjusted in the account and marketplace database respectively.
+
 [**Link To task**](https://github.com/users/SteaneMurphy/projects/1/views/1?pane=issue&itemId=61853787)
 ![TaskMarketplaceDisplay](./docs/TaskMarketplaceDisplay.PNG)
 
 ### ${\textsf{\color{darkorange}F5 }}$ _MARKETPLACE: USER LIST ITEM_
 
+This feature allows a user to list an item they own for sale on the marketplace.
+
+The user is prompted for input for the the following fields (item name, sale price, duration). The item name is checked against the user's item list in the account database (JSON file). If it is found, the item is locked and its information sent to the marketplace database (JSON file).
+
 [**Link To task**](https://github.com/users/SteaneMurphy/projects/1/views/1?pane=issue&itemId=61853791)
 ![TaskUserSell](./docs/TaskUserSell.PNG)
 
 ### ${\textsf{\color{darkorange}F6 }}$ _DISPLAY INVENTORY / DISPLAY CURRENCY_
+
+This feature allows a user to query their currency amount and list what items exist in their inventory.
+
+The user is prompted for input for either choice. The relevant field is checked against the account database (JSON file) and the results returned and displayed on the screen.
 
 [**Link To task**](https://github.com/users/SteaneMurphy/projects/1/views/1?pane=issue&itemId=61853810)
 ![TaskUserInfo](./docs/TaskUserInfo.PNG)
