@@ -133,16 +133,28 @@ Each feature has its own issue or card. Under this card are relevant screenshots
 ![TaskMenuLogged](./docs/TaskLoggedMenu.PNG)
 
 ### ${\textsf{\color{darkorange}F2 }}$ _NEW USER SIGNUP_
-
+[**Link To task**](https://github.com/users/SteaneMurphy/projects/1/views/1?pane=issue&itemId=61853779)
 ![TaskSignup](./docs/TaskSignup.PNG)
 
 ### ${\textsf{\color{darkorange}F3 }}$ _USER LOG IN_
 
+[**Link To task**](https://github.com/users/SteaneMurphy/projects/1/views/1?pane=issue&itemId=61853782)
+![TaskLogin](./docs/TasksLogin.PNG)
+
 ### ${\textsf{\color{darkorange}F4 }}$ _MARKETPLACE: DISPLAY ITEMS_
+
+[**Link To task**](https://github.com/users/SteaneMurphy/projects/1/views/1?pane=issue&itemId=61853787)
+![TaskMarketplaceDisplay](./docs/TaskMarketplaceDisplay.PNG)
 
 ### ${\textsf{\color{darkorange}F5 }}$ _MARKETPLACE: USER LIST ITEM_
 
+[**Link To task**](https://github.com/users/SteaneMurphy/projects/1/views/1?pane=issue&itemId=61853791)
+![TaskUserSell](./docs/TaskUserSell.PNG)
+
 ### ${\textsf{\color{darkorange}F6 }}$ _DISPLAY INVENTORY / DISPLAY CURRENCY_
+
+[**Link To task**](https://github.com/users/SteaneMurphy/projects/1/views/1?pane=issue&itemId=61853810)
+![TaskUserInfo](./docs/TaskUserInfo.PNG)
 
 ## ${\textsf{\color{blue}HELP}}$
 
