@@ -1,7 +1,8 @@
 class Menu():
 
-    def __init__(self, user_logged):
+    def __init__(self, user_logged, main_instance):
         self.user_logged = user_logged
+        self.main_instance = main_instance
 
     def display_menu(self):
         if self.user_logged is False:
@@ -25,7 +26,7 @@ class Menu():
             print(" 3. Quit Application\n")
 
             selection = input(" >>> ")
-            self.process_menu_selection(selection)
+            self.main_menu_selection(selection)
         else:
             print("\n ******************************************** LOGGED ***")
             print(" *                                                     *")
@@ -39,5 +40,27 @@ class Menu():
             print(" 4. Sell Item")
             print(" 5. Log Out")
 
-    def process_menu_selection(self, selection):
-        print(selection)
+            selection = input(" >>> ")
+            self.logged_menu_selection(selection)
+
+    def main_menu_selection(self, selection):
+        match selection:
+            case "1":
+                self.main_instance.log_in()
+            case "2":
+                self.main_instance.sign_up()
+            case "3":
+                self.main_instance.quit()
+
+    def logged_menu_selection(self, selection):
+        match selection:
+            case "1":
+                self.main_instance.display_currency()
+            case "2":
+                self.main_instance.display_inventory()
+            case "3":
+                self.main_instance.open_marketplace()
+            case "4":
+                self.main_instance.sell_item()
+            case "5":
+                self.main_instance.log_out()
