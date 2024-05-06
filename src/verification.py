@@ -1,4 +1,5 @@
 import re
+import json
 
 class Verification():
 
@@ -31,7 +32,37 @@ class Verification():
             return False
         
     def check_credentials(self, username, server):
-        pass
+        with open ("accounts.json", "r") as file:
+            accounts = json.load(file)
+            for account in accounts:
+                if account["username"].lower() == username.lower():
+                    if account["server"].lower() == server.lower():
+                        return True
+            return False
 
-    def verify_account(self, username, email, password):
-        pass
+    def verify_account(self, login, password):
+        with open ("accounts.json", "r") as file:
+            accounts = json.load(file)
+            for account in accounts:
+                if account["username"].lower() == login.lower() or account["email"].lower() == login.lower():
+                    if account["password"] == password:
+                        return True
+            return False
+        
+    def add_account(self, username, server, fname, lname, email, password):
+        new_account = {
+            "username": username,
+            "server": server,
+            "email": email,
+            "firstname": fname,
+            "lastname": lname,
+            "password": password,
+            "currency": 1000,
+            "items": [] 
+            }
+        serialised = json.dumps(new_account, indent=4)
+
+        with open ("accounts.json", "w") as file:
+            file.append(serialised)
+
+

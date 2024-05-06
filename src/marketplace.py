@@ -7,6 +7,7 @@ class Main():
         print(" To create an account, we will need some information from you\n")
         username = input(" Username: ")
         server = input(" Server: ")
+        print(verify.check_credentials(username, server))
         fname = input(" First Name: ")
         lname = input(" Last Name: ")
         email = input(" Email: ")
@@ -15,14 +16,16 @@ class Main():
         password = input(" Password: ")
         verify.validate_password(password)
         c_password = input(" Confirm Password: ")
-        print(verify.confirm_password(password, c_password))
+        verify.confirm_password(password, c_password)
+        verify.add_account(username, server, fname, lname, email, password)
         print(" \n***Account Created - Returning to menu***")
         menu.display_menu(False)
 
     def log_in(self):
         print(" To log in, please provide your details\n")
-        input(" Username or email: ")
-        input(" Password: ")
+        login = input(" Username or email: ")
+        password = input(" Password: ")
+        print(verify.verify_account(login, password))
         menu.display_menu(True)
 
     def display_currency(self):
