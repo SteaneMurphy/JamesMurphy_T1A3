@@ -1,11 +1,10 @@
 class Menu():
 
-    def __init__(self, user_logged, main_instance):
-        self.user_logged = user_logged
+    def __init__(self, main_instance):
         self.main_instance = main_instance
 
-    def display_menu(self):
-        if self.user_logged is False:
+    def display_menu(self, user_logged):
+        if user_logged is False:
             header = """ 
                                      ___                                  ______                           _               
                                     /   |  ______________ _____  ___     / ____/___ ___  ____  ____  _____(_)_  ______ ___ 
