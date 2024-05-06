@@ -61,8 +61,10 @@ class Verification():
             "items": [] 
             }
         serialised = json.dumps(new_account, indent=4)
-
-        with open ("accounts.json", "w") as file:
-            file.append(serialised)
+        with open ("accounts.json", "r+") as file:
+            file_data = json.load(file)
+            file_data.append(new_account)
+            file.seek(0)
+            json.dump(file_data, file, indent=4)
 
 

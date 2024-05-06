@@ -13,10 +13,16 @@ class Main():
         email = input(" Email: ")
         print("\n Please create a password. Must contain one of each of the following:")
         print(" Lowercase/uppercase letter, number and special character\n")
-        password = input(" Password: ")
-        verify.validate_password(password)
-        c_password = input(" Confirm Password: ")
-        verify.confirm_password(password, c_password)
+        while True:
+            password = input(" Password: ")
+            if verify.validate_password(password) is False:
+                print("\nPassword did not meet requirements, please try again\n")
+                continue
+            c_password = input(" Confirm Password: ")
+            if verify.confirm_password(password, c_password) is False:
+                print("Passwords do not match, please try again")
+            else:
+                break
         verify.add_account(username, server, fname, lname, email, password)
         print(" \n***Account Created - Returning to menu***")
         menu.display_menu(False)

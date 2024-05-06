@@ -1,10 +1,57 @@
-{
-    "username": "James",
-    "server": "Grotto",
-    "email": "",
-    "firstname": "exit()",
-    "lastname": "",
-    "password": "",
-    "currency": 1000,
-    "items": []
-}
+[
+    {
+        "username": "Grumblefizz Goodbarrel",
+        "server": "Grotto",
+        "email": "grumblefizz.goodbarrel@enchantedemporium.com",
+        "firstname": "Theodore",
+        "lastname": "Thompson",
+        "password": "howdyABC123!",
+        "currency": 1430,
+        "items": 
+        [
+            {
+                "small sword": false, 
+                "lockpick": false, 
+                "Thunderfury, Blessed Blade of the Windseeker": true, 
+                "leather boots": true
+            }
+        ]
+    },
+    {
+        "username": "Twinkletoe McSparklepants",
+        "server": "Nimble",
+        "email": "twinkletoe.mcsparklepants@mythicalmarketplace.com",
+        "firstname": "Penelope",
+        "lastname": "Parker",
+        "password": "howdyABC123!",
+        "currency": 15956,
+        "items": 
+        [
+            {
+                "gnarled staff": false, 
+                "celestial silk robes": true, 
+                "mana potion": false, 
+                "cloth sandals": true, 
+                "Luminous Locket of Serenity": true
+            }
+        ]
+    },
+    {
+        "username": "Gigglesnort Goblingrub",
+        "server": "Starlight",
+        "email": "gigglesnort.goblingrub@fantasyforsale.net",
+        "firstname": "Ethan",
+        "lastname": "Wilson",
+        "password": "howdyABC123!",
+        "currency": 30,
+        "items": 
+        [
+            {
+                "glittering mace": true, 
+                "steel boots": false, 
+                "heavy breastplate": false, 
+                "Rainbow Ring of Multifaceted Powers": true
+            }
+        ]
+    }
+]
