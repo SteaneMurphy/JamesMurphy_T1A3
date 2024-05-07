@@ -67,4 +67,35 @@ class Verification():
             file.seek(0)
             json.dump(file_data, file, indent=4)
 
+    def check_balance(self, username):
+        with open ("accounts.json", "r") as file:
+            file_data = json.load(file)
+            for account in file_data:
+                if account["username"] == username:
+                    return account["currency"]
+                
+    def display_items(self, username):
+        with open ("accounts.json", "r") as file:
+            file_data = json.load(file)
+            for account in file_data:
+                if account["username"] == username:
+                    for key, value in account["items"][0].items():
+                        print(f' - {key} (Can Sell: {value})')
+
+    def display_marketplace_items(self):
+        with open ("marketplace_items.json", "r") as file:
+            file_data = json.load(file)
+            i = 1
+            for account in file_data:
+                print(f' | {i} >>> {account["name"]}')
+                print(f' |      -  {account["price"]} glimmergold')
+                print(f' |      -  {account["duration"]} days')
+                i += 1
+
+    def confirm_sale(self, selection):
+        with open ("marketplace_items.json", "r") as file:
+            file_data = json.load(file)
+            print(file_data[selection - 1]["name"])
+        #print(f' Type "Y" or "Yes" to confirm purchase of {i} for {j} glimmergold: ')
+        
 

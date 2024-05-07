@@ -2,6 +2,8 @@ from menu import Menu
 from verification import Verification
 
 class Main():
+    def __init__(self):
+        self.active_account = ""
 
     def sign_up(self):
         print(" To create an account, we will need some information from you\n")
@@ -32,16 +34,24 @@ class Main():
         login = input(" Username or email: ")
         password = input(" Password: ")
         print(verify.verify_account(login, password))
+        self.active_account = login
         menu.display_menu(True)
 
     def display_currency(self):
-        print(" Your available currency: ")
+        print(f'\n Your available balance is: ${verify.check_balance(self.active_account)}\n')
+        menu.display_menu(True)
 
     def display_inventory(self):
-        print(" Items in your inventory: ")
+        print("\n Your items: \n")
+        verify.display_items(self.active_account)
+        menu.display_menu(True)
 
     def open_marketplace(self):
-        print("open marketplace")
+        print(" ---------------------------------------------ARCANE EMPORIUM - ITEMS FOR SALE---\n")
+        verify.display_marketplace_items()
+        print("\n ---ARCANE EMPORIUM - ITEMS FOR SALE---------------------------------------------")
+        selection = int(input("\n Enter number to select item: "))
+        verify.confirm_sale(selection)
 
     def sell_item(self):
         print(" To sell an item, we need some information\n")
