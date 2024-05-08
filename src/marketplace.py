@@ -55,15 +55,20 @@ class Main():
 
     def sell_item(self):
         print(" To sell an item, we need some information\n")
-        input(" Item Name: ")
-        input(" Sell Price: ")
-        input(" Duration (days): ")
+        name = input(" Item Name: ")
+        price = input(" Sell Price: ")
+        duration = input(" Duration (days): ")
+        verify.add_item(self.active_account, name, price, duration)
+        menu.display_menu(True)
 
     def log_out(self):
+        self.active_account = ""
+        menu.display_menu(False)
         print(" ***Logging you out...***")
 
     def quit(self):
         print(" ***Leaving application***")
+        exit()
 
 main = Main()
 menu = Menu(main)

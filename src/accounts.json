@@ -53,5 +53,20 @@
                 "Rainbow Ring of Multifaceted Powers": true
             }
         ]
+    },
+    {
+        "username": "test",
+        "server": "Grotto",
+        "email": "test@test.com",
+        "firstname": "tester",
+        "lastname": "testy",
+        "password": "howdyABC123!",
+        "currency": 5000,
+        "items": 
+        [
+            {
+                "long sword": false
+            }
+        ]
     }
 ]

@@ -125,6 +125,34 @@ class Verification():
             
         with open ("accounts.json", "w") as file:
             json.dump(file_data, file, indent=4)
+
+    def add_item(self, username, item_name, price, duration):
+        new_item = {
+            "name": item_name,
+            "price": price,
+            "username": username,
+            "duration": duration
+        }
+
+        with open ("accounts.json", "r") as accounts:
+            file_data = json.load(accounts)
+            for account in file_data:
+                if account["username"] == username:
+                    if account["items"][0][item_name] != True:
+                        account["items"][0][item_name] = True
+                    else:
+                        print("Item is already on marketplace!")
+                        return
+
+        with open ("accounts.json", "w") as over:
+            json.dump(file_data, over, indent=4)
+
+        with open ("marketplace_items.json", "r+") as file:
+            file_data = json.load(file)
+            file_data.append(new_item)
+            file.seek(0)
+            json.dump(file_data, file, indent=4)
+
             
         
 
