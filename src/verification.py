@@ -92,10 +92,39 @@ class Verification():
                 print(f' |      -  {account["duration"]} days')
                 i += 1
 
-    def confirm_sale(self, selection):
+    def confirm_sale(self, selection, active_account):
         with open ("marketplace_items.json", "r") as file:
             file_data = json.load(file)
-            print(file_data[selection - 1]["name"])
-        #print(f' Type "Y" or "Yes" to confirm purchase of {i} for {j} glimmergold: ')
+            choice = input(f' Type "Y" or "Yes" to confirm purchase of {file_data[selection - 1]["name"]} for {file_data[selection - 1]["price"]} glimmergold')
+            if choice.lower() == "y" or choice.lower() == "yes":
+                self.adjust_seller(file_data[selection - 1]["name"], file_data[selection - 1]["username"], file_data[selection - 1]["price"])
+                self.adjust_buyer(active_account, file_data[selection - 1]["name"], file_data[selection - 1]["price"])
+                del file_data[selection - 1]
+        
+        with open ("marketplace_items.json", "w") as file:
+            json.dump(file_data, file, indent=4)
+
+    def adjust_seller(self, item_name, seller_name, amount):
+        with open ("accounts.json", "r") as file:
+            file_data = json.load(file)
+            for account in file_data:
+                if account["username"] == seller_name:
+                    account["currency"] += amount
+                    account["items"][0].pop(item_name)
+                
+        with open ("accounts.json", "w") as file:
+            json.dump(file_data, file, indent=4)
+
+    def adjust_buyer(self, buyer_name, item_name, amount):
+        with open ("accounts.json", "r") as file:
+            file_data = json.load(file)
+            for account in file_data:
+                if account["username"] == buyer_name:
+                    account["currency"] -= amount
+                    account["items"][0][item_name] = False
+            
+        with open ("accounts.json", "w") as file:
+            json.dump(file_data, file, indent=4)
+            
         
 

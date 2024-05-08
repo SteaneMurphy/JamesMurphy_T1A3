@@ -51,7 +51,7 @@ class Main():
         verify.display_marketplace_items()
         print("\n ---ARCANE EMPORIUM - ITEMS FOR SALE---------------------------------------------")
         selection = int(input("\n Enter number to select item: "))
-        verify.confirm_sale(selection)
+        verify.confirm_sale(selection, self.active_account)
 
     def sell_item(self):
         print(" To sell an item, we need some information\n")
