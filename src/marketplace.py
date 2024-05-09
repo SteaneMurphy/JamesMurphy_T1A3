@@ -1,5 +1,6 @@
 from menu import Menu
 from verification import Verification
+from account import Account
 
 class Main():
     def __init__(self):
@@ -69,6 +70,21 @@ class Main():
     def quit(self):
         print(" ***Leaving application***")
         exit()
+
+    def test(self):
+        items = { "hammer", "tongs", "beer" }
+        new_account = Account("Wilma", "Grotto", "test@test.com", "Wilma", "Flintstone", "howdyABC123!", 1000, items)
+        print(new_account.username)
+        print(new_account.server)
+        print(new_account.email)
+        print(new_account.firstname)
+        print(new_account.lastname)
+        print(new_account.password)
+        new_account.currency = -50
+        print(new_account.currency)
+        new_items = { "hammer", "tongs", "beer", "pong" }
+        new_account.items = new_items
+        print(new_account.items)
 
 main = Main()
 menu = Menu(main)

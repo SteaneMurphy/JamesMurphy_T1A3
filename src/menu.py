@@ -50,6 +50,8 @@ class Menu():
                 self.main_instance.sign_up()
             case "3":
                 self.main_instance.quit()
+            case "4":
+                self.main_instance.test()
 
     def logged_menu_selection(self, selection):
         match selection:
