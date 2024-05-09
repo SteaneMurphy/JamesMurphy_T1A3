@@ -1,5 +1,6 @@
 import re
 import json
+from account import Account
 
 class Verification():
 
@@ -33,9 +34,10 @@ class Verification():
             for account in accounts:
                 if account["username"].lower() == login.lower() or account["email"].lower() == login.lower():
                     if account["password"] == password:
-                        return True
-            return False
-        
+                        return True, Account(account["username"], account["server"], account["email"], account["firstname"], 
+                                             account["lastname"], account["password"], account["currency"], account["items"])
+            return False, None
+
     def add_account(self, username, server, fname, lname, email, password):
         new_account = {
             "username": username,

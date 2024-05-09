@@ -42,10 +42,24 @@ class Main():
 
     def log_in(self):
         print(" To log in, please provide your details\n")
-        login = input(" Username or email: ")
-        password = input(" Password: ")
-        print(verify.verify_account(login, password))
-        self.active_account = login
+        attempts = 3
+        while True:
+            login = input(" Username or email: ")
+            password = input(" Password: ")
+            valid, account = verify.verify_account(login, password)
+            if valid:
+                print("\n Success! Logging you in!\n")
+                self.active_account = account
+                break
+            else:
+                print("\n Account credentials do not match, try again\n")
+                print(f"\n ATTEMPTS REMAINING: {attempts -1}\n")
+                if attempts <= 1:
+                    print("\n To many failed attempts, returning you to the menu\n")
+                    menu.display_menu(False)
+                else:
+                    attempts -= 1
+     
         menu.display_menu(True)
 
     def display_currency(self):
