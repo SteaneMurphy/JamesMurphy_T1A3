@@ -38,39 +38,6 @@ class Verification():
                                              account["lastname"], account["password"], account["currency"], account["items"])
             return False, None
 
-    def add_account(self, username, server, fname, lname, email, password):
-        new_account = {
-            "username": username,
-            "server": server,
-            "email": email,
-            "firstname": fname,
-            "lastname": lname,
-            "password": password,
-            "currency": 1000,
-            "items": [] 
-            }
-        serialised = json.dumps(new_account, indent=4)
-        with open ("accounts.json", "r+") as file:
-            file_data = json.load(file)
-            file_data.append(new_account)
-            file.seek(0)
-            json.dump(file_data, file, indent=4)
-
-    def check_balance(self, username):
-        with open ("accounts.json", "r") as file:
-            file_data = json.load(file)
-            for account in file_data:
-                if account["username"] == username:
-                    return account["currency"]
-                
-    def display_items(self, username):
-        with open ("accounts.json", "r") as file:
-            file_data = json.load(file)
-            for account in file_data:
-                if account["username"] == username:
-                    for key, value in account["items"][0].items():
-                        print(f' - {key} (Can Sell: {value})')
-
     def display_marketplace_items(self):
         with open ("marketplace_items.json", "r") as file:
             file_data = json.load(file)

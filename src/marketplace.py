@@ -63,12 +63,13 @@ class Main():
         menu.display_menu(True)
 
     def display_currency(self):
-        print(f'\n Your available balance is: ${verify.check_balance(self.active_account)}\n')
+        print(f'\n Your available balance is: ${self.active_account.currency}\n')
         menu.display_menu(True)
 
     def display_inventory(self):
         print("\n Your items: \n")
-        verify.display_items(self.active_account)
+        for key, value in self.active_account.items[0].items():
+            print(f" - {key} (Can Sell: {value})")
         menu.display_menu(True)
 
     def open_marketplace(self):
@@ -87,28 +88,13 @@ class Main():
         menu.display_menu(True)
 
     def log_out(self):
-        self.active_account = ""
+        self.active_account = None
         menu.display_menu(False)
         print(" ***Logging you out...***")
 
     def quit(self):
         print(" ***Leaving application***")
         exit()
-
-    def test(self):
-        items = { "hammer", "tongs", "beer" }
-        new_account = Account("Wilma", "Grotto", "test@test.com", "Wilma", "Flintstone", "howdyABC123!", 1000, items)
-        print(new_account.username)
-        print(new_account.server)
-        print(new_account.email)
-        print(new_account.firstname)
-        print(new_account.lastname)
-        print(new_account.password)
-        new_account.currency = -50
-        print(new_account.currency)
-        new_items = { "hammer", "tongs", "beer", "pong" }
-        new_account.items = new_items
-        print(new_account.items)
 
 main = Main()
 menu = Menu(main)
