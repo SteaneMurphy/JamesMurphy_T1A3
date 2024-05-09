@@ -28,12 +28,12 @@ class Verification():
         else:
             return False
 
-    def verify_account(self, login, password):
+    def verify_account(self, login, password = None, skip_pass = False):
         with open ("accounts.json", "r") as file:
             accounts = json.load(file)
             for account in accounts:
                 if account["username"].lower() == login.lower() or account["email"].lower() == login.lower():
-                    if account["password"] == password:
+                    if account["password"] == password or skip_pass:
                         return True, Account(account["username"], account["server"], account["email"], account["firstname"], 
                                              account["lastname"], account["password"], account["currency"], account["items"])
             return False, None
@@ -47,42 +47,22 @@ class Verification():
                 print(f' |      -  {account["price"]} glimmergold')
                 print(f' |      -  {account["duration"]} days')
                 i += 1
-
-    def confirm_sale(self, selection, active_account):
+            return i
+    
+    def get_item(self, selection):
         with open ("marketplace_items.json", "r") as file:
-            file_data = json.load(file)
-            choice = input(f' Type "Y" or "Yes" to confirm purchase of {file_data[selection - 1]["name"]} for {file_data[selection - 1]["price"]} glimmergold')
-            if choice.lower() == "y" or choice.lower() == "yes":
-                self.adjust_seller(file_data[selection - 1]["name"], file_data[selection - 1]["username"], file_data[selection - 1]["price"])
-                self.adjust_buyer(active_account, file_data[selection - 1]["name"], file_data[selection - 1]["price"])
-                del file_data[selection - 1]
+            items = json.load(file)
+            return items[selection - 1]["name"], items[selection - 1]["price"], items[selection - 1]["username"]
+
+    def remove_item(self, selection):
+        with open ("marketplace_items.json", "r") as file:
+            items = json.load(file)
+            del items[selection - 1]
         
         with open ("marketplace_items.json", "w") as file:
-            json.dump(file_data, file, indent=4)
+            json.dump(items, file, indent=4)
 
-    def adjust_seller(self, item_name, seller_name, amount):
-        with open ("accounts.json", "r") as file:
-            file_data = json.load(file)
-            for account in file_data:
-                if account["username"] == seller_name:
-                    account["currency"] += amount
-                    account["items"][0].pop(item_name)
-                
-        with open ("accounts.json", "w") as file:
-            json.dump(file_data, file, indent=4)
-
-    def adjust_buyer(self, buyer_name, item_name, amount):
-        with open ("accounts.json", "r") as file:
-            file_data = json.load(file)
-            for account in file_data:
-                if account["username"] == buyer_name:
-                    account["currency"] -= amount
-                    account["items"][0][item_name] = False
-            
-        with open ("accounts.json", "w") as file:
-            json.dump(file_data, file, indent=4)
-
-    def add_item(self, username, item_name, price, duration):
+    def add_item(self, username, account_items, item_name, price, duration):
         new_item = {
             "name": item_name,
             "price": price,
@@ -90,21 +70,21 @@ class Verification():
             "duration": duration
         }
 
-        with open ("accounts.json", "r") as accounts:
-            file_data = json.load(accounts)
-            for account in file_data:
-                if account["username"] == username:
-                    if account["items"][0][item_name] != True:
-                        account["items"][0][item_name] = True
-                    else:
-                        print("Item is already on marketplace!")
-                        return
+        for item, value in account_items[0].items():
+            if item == item_name:
+                if account_items[0][item] != True:
+                    account_items[0][item] = True
 
-        with open ("accounts.json", "w") as over:
-            json.dump(file_data, over, indent=4)
+                    with open ("marketplace_items.json", "r+") as file:
+                        file_data = json.load(file)
+                        file_data.append(new_item)
+                        file.seek(0)
+                        json.dump(file_data, file, indent=4)
+                else:
+                    print("\n Item is already listed on the marketplace")
+                    return
+            else:
+                print("\n No such item exists in your inventory")
+                return
 
-        with open ("marketplace_items.json", "r+") as file:
-            file_data = json.load(file)
-            file_data.append(new_item)
-            file.seek(0)
-            json.dump(file_data, file, indent=4)
+        

@@ -69,22 +69,48 @@ class Main():
     def display_inventory(self):
         print("\n Your items: \n")
         for key, value in self.active_account.items[0].items():
-            print(f" - {key} (Can Sell: {value})")
+            print(f" - {key} (Locked: {value})")
         menu.display_menu(True)
 
     def open_marketplace(self):
-        print(" ---------------------------------------------ARCANE EMPORIUM - ITEMS FOR SALE---\n")
-        verify.display_marketplace_items()
-        print("\n ---ARCANE EMPORIUM - ITEMS FOR SALE---------------------------------------------")
-        selection = int(input("\n Enter number to select item: "))
-        verify.confirm_sale(selection, self.active_account)
+        selection = menu.display_marketplace(verify)
+        item_name, item_price, seller_name = verify.get_item(selection)
+        print(f"\n Confirm purchase: {item_name}, {item_price} glimmergold")
+        confirm = input(" (Y / Yes) >>> ")
+        if confirm.lower() == "y" or confirm.lower() == "yes":
+            if self.active_account.currency - int(item_price) < 0:
+                print("\n You do not have enough Glimmergold to purchase this item")
+                menu.select_another_item()
+            else:
+                self.active_account.currency = -item_price
+                self.active_account.items[0][item_name] = False
+                confim, seller_account = verify.verify_account(seller_name, skip_pass=True)
+                seller_account.currency = item_price
+                seller_account.items[0].pop(item_name)
+                self.active_account.update_accounts()
+                seller_account.update_accounts()
+                verify.remove_item(selection)
+                print("\n Item purchased")
+                menu.select_another_item()
+        else:
+            menu.select_another_item()
 
     def sell_item(self):
         print(" To sell an item, we need some information\n")
         name = input(" Item Name: ")
-        price = input(" Sell Price: ")
-        duration = input(" Duration (days): ")
-        verify.add_item(self.active_account, name, price, duration)
+
+        while True:
+            try:
+                price = int(input(" Sell Price: "))
+                duration = int(input(" Duration (days): "))
+            except ValueError:
+                print("\n Invalid input, you must provide a number")
+            else:
+                break
+
+        verify.add_item(self.active_account.username, self.active_account.items, name, price, duration)
+        print("\n Your item has been listed")
+        self.active_account.update_accounts()
         menu.display_menu(True)
 
     def log_out(self):

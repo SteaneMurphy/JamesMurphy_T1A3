@@ -69,3 +69,31 @@ class Menu():
             case _:
                 print("\n This is not a valid menu option, please select from the availble options\n")
                 self.display_menu(True)
+
+    def display_marketplace(self, verify):
+        print(" ---------------------------------------------ARCANE EMPORIUM - ITEMS FOR SALE---\n")
+        list_length = verify.display_marketplace_items()
+        print("\n ---ARCANE EMPORIUM - ITEMS FOR SALE---------------------------------------------")
+        selection = int(input("\n Enter number to select item: "))
+        print(list_length)
+        if selection == 0 or selection > list_length - 1:
+            print("\n There is no item listed in that slot")
+            self.select_another_item()
+        else:
+            return selection
+
+    def select_another_item(self):
+        print("\n Would you like to select another item?")
+        confirm = input(" (Y / Yes) >>> ")
+        if confirm.lower() == "y" or confirm.lower() == "yes":
+            self.main_instance.open_marketplace()
+        else:
+            self.display_menu(True)
+
+    def sell_another_item(self):
+        print("\n Would you like to sell another item?")
+        confirm = input(" (Y / Yes) >>> ")
+        if confirm.lower() == "y" or confirm.lower() == "yes":
+            self.main_instance.sell_item()
+        else:
+            self.display_menu(True)
