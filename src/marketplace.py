@@ -4,19 +4,26 @@ from account import Account
 
 class Main():
     def __init__(self):
-        self.active_account = ""
+        self.active_account = None
 
     def sign_up(self):
         print(" To create an account, we will need some information from you\n")
-        username = input(" Username: ")
-        server = input(" Server: ")
-        print(verify.check_credentials(username, server))
+
+        while True:
+            username = input(" Username: ")
+            server = input(" Server: ")
+            if verify.character_exists(username, server) is True:
+                break
+            else:
+                print("\n Character does not exist, please try again\n")
+
         fname = input(" First Name: ")
         lname = input(" Last Name: ")
         email = input(" Email: ")
-        print("\n Please create a password. Must contain one of each of the following:")
-        print(" Lowercase/uppercase letter, number and special character\n")
+
         while True:
+            print("\n Please create a password. Must contain one of each of the following:")
+            print(" Lowercase/uppercase letter, number and special character\n")
             password = input(" Password: ")
             if verify.validate_password(password) is False:
                 print("\nPassword did not meet requirements, please try again\n")
@@ -26,7 +33,10 @@ class Main():
                 print("Passwords do not match, please try again")
             else:
                 break
-        verify.add_account(username, server, fname, lname, email, password)
+
+        new_account = Account(username, server, email, fname, lname, password)
+        new_account.update_accounts(True)
+
         print(" \n***Account Created - Returning to menu***")
         menu.display_menu(False)
 

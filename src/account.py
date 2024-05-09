@@ -1,6 +1,8 @@
+import json
+
 class Account():
 
-    def __init__(self, username, server, email, firstname, lastname, password, currency, items):
+    def __init__(self, username, server, email, firstname, lastname, password, currency = 0, items = None):
         self._username = username
         self._server = server
         self._email = email
@@ -50,4 +52,31 @@ class Account():
     def items(self, new_items):
         self._items = new_items
 
-    
+    def update_accounts(self, new_account = False):
+        updated_information = {
+            "username": self._username,
+            "server": self._server,
+            "email": self._email,
+            "firstname": self._firstname,
+            "lastname": self._lastname,
+            "password": self._password,
+            "currency": self._currency,
+            "items": self._items 
+            }
+        
+        if new_account:
+            with open ("accounts.json", "r+") as file:
+                accounts = json.load(file)
+                accounts.append(updated_information)
+                file.seek(0)
+                json.dump(accounts, file, indent=4)
+        else:
+            with open ("accounts.json", "r") as file:
+                accounts = json.load(file)
+                for account in accounts:
+                    if account["username"] == self._username:
+                        account["currency"] = self._currency
+                        account["items"][0] = self._items
+                    
+            with open ("accounts.json", "w") as file:
+                json.dump(accounts, file, indent=4)

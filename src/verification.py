@@ -3,6 +3,15 @@ import json
 
 class Verification():
 
+    def character_exists(self, username, server):
+        with open ("character_server_list.json", "r") as file:
+            accounts = json.load(file)
+            for account in accounts:
+                if account["username"].lower() == username.lower():
+                    if account["server"].lower() == server.lower():
+                        return True
+            return False
+
     def validate_password(self, password):
         pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$"
         regex = re.compile(pattern)
@@ -16,28 +25,6 @@ class Verification():
         if password == c_password:
             return True
         else:
-            return False
-        
-    def validate_email(self, email):
-        pattern = """(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21
-                        \\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+
-                        [a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\\.){3}(?:(2(5[0-5]|
-                        [0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x 0c\\x0e-\\x1f\\x21-\\x5a\\x53-
-                        \\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"""
-        regex = re.compile(pattern)
-        p_match = re.search(regex, email)
-        if p_match:
-            return True
-        else:
-            return False
-        
-    def check_credentials(self, username, server):
-        with open ("accounts.json", "r") as file:
-            accounts = json.load(file)
-            for account in accounts:
-                if account["username"].lower() == username.lower():
-                    if account["server"].lower() == server.lower():
-                        return True
             return False
 
     def verify_account(self, login, password):
@@ -152,7 +139,3 @@ class Verification():
             file_data.append(new_item)
             file.seek(0)
             json.dump(file_data, file, indent=4)
-
-            
-        
-
