@@ -42,6 +42,10 @@ install() {
 }
 
 run(){
+    #activate venv
+    echo "Activating virtual environment..."
+    source ".venv/bin/activate"
+    echo "Virtual environment activated"
     echo "Running marketplace.py..."
     python3 marketplace.py
 }

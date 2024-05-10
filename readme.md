@@ -181,12 +181,88 @@ The user is prompted for input for either choice. The relevant field is checked 
 
 ## ${\textsf{\color{blue}HELP}}$
 
-_to add_
+### ${\textsf{\color{darkorange}1 }}$ INSTALLATION
 
-- steps to install the app
-- dependencies
-- system/hardware requirements
-- how to use any command line arguments
+To successfully run the program, please follow the following steps:
+
+- download the latest git repository
+```shell
+git clone https://github.com/SteaneMurphy/Terminal-Marketplace.git
+```
+- in the terminal, navigate to the source folder, named "src"
+```shell
+<cloned directory>: cd src
+```
+- ensure you have python3.10 or later installed
+```shell
+<cloned directory>: python3 --version
+```
+- to install python3 (if required)
+```shell
+sudo apt-update python3
+```
+- once in the 'src' directory, enable the install script to run
+```shell
+chmod +x install.sh
+```
+- for first time execution run the install command, this will install any dependencies, a virtual environment and run the application
+```shell
+source ./install.sh --install
+
+or
+
+source ./install.sh -i
+```
+- for returning users (using the same virtual environment), this will activate your virtual environment and run the application
+```shell
+source ./install.sh --run
+
+or
+
+source ./install.sh -r
+```
+- these commands can be viewed by using the help command
+```shell
+source ./install.sh --help
+
+or
+
+source ./install.sh -h
+```
+
+### ${\textsf{\color{darkorange}2 }}$ DEPENDENCIES
+
+The following is a list of required modules for the program to successfully run. These dependencies can be automatically checked and installed by running the following command
+
+```shell
+source ./install.sh --install
+```
+
+The install command must be run from the 'src' directory inside the cloned project directory
+
+- _ascii-magic==2.3.0_
+- _black==24.4.2_
+- _certifi==2024.2.2_
+- _charset-normalizer==3.3.2_
+- _click==8.1.7_
+- _colorama==0.4.6_
+- _idna==3.7_
+- _mypy-extensions==1.0.0_
+- _packaging==24.0_
+- _pathspec==0.12.1_
+- _pillow==10.3.0_
+- _platformdirs==4.2.1_
+- _pycodestyle==2.11.1_
+- _termcolor==2.4.0_
+- _tomli==2.0.1_
+- _typing_extensions==4.11.0_
+- _urllib3==2.2.1_
+
+### ${\textsf{\color{darkorange}3 }}$ SYSTEM REQUIREMENTS
+
+The only system requirement is a modern terminal like Ubuntu and python3.10 or greater
+
+Please run this application in a full-screen terminal
 
 ## ${\textsf{\color{blue}STYLE GUIDES}}$
 
@@ -198,8 +274,28 @@ __PEP8__ - For code formatting, language usuage and best practice
 
 - [**Link To PEP8 Guide**](https://peps.python.org/pep-0008/)
 
-__PEP257__ - For docstring formatting best practice
-
-- [**Link To PEP257 Guide**](https://peps.python.org/pep-0257/)
-
 ## ${\textsf{\color{blue}REFERENCES}}$
+
+Damnever, 2023, Automatically create 'file-requirements.txt', _StackOverflow_, web log post, 22 June, viewed 10 May 2024, 
+https://github.com/SteaneMurphy/Terminal-Marketplace
+
+GeeksForGeeks, 2022, _Reading and Writing JSON to a File in Python_, viewed 6 May 2024, 
+https://www.geeksforgeeks.org/reading-and-writing-json-to-a-file-in-python/
+
+Makwana, D, 2023, Automating Virtual Environments: Bash Script Magic For Python Developers, _Medium_, web log post, 12 August, viewed 10 May 2024, 
+https://makwanadhruv.medium.com/automating-virtual-environments-bash-script-magic-for-python-developers-3a06df1777a6
+
+Rossum, G 2013, PEP 8 – Style Guide for Python Code, _Python Enhancement Proposals_, viewed 2 May 2024, 
+https://peps.python.org/pep-0008/
+
+Verma, A 2019, Getter and Setter in Python, _GeeksForGeeks_, web log post, 4 December, viewed 4 May 2024, 
+https://www.geeksforgeeks.org/getter-and-setter-in-python/
+
+Voilalex, 2021, Automatic requirements.txt updating approach, _StackOverflow_, web log post, 22 December, viewed 10 May 2024, 
+https://stackoverflow.com/questions/46419607/how-to-automatically-install-required-packages-from-a-python-script-as-necessary
+
+Vogel, T 2011, Simulating ENTER keypress in bash script, _StackOverflow_, web log post, 28 October, viewed 10 May 2024, 
+https://stackoverflow.com/questions/6264596/simulating-enter-keypress-in-bash-script
+
+W3Schools, n.d., _Python Try Except_, viewed 4 May 2024, 
+https://www.w3schools.com/python/python_try_except.asp
