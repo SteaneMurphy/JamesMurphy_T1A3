@@ -1,3 +1,4 @@
+from termcolor import colored
 import re
 import json
 from account import Account
@@ -69,22 +70,26 @@ class Verification():
             "username": username,
             "duration": duration
         }
-
-        for item, value in account_items[0].items():
+        
+        for item, value in account_items.items():
+            print(item)
             if item == item_name:
-                if account_items[0][item] != True:
-                    account_items[0][item] = True
+                if account_items[item] != True:
+                    account_items[item] = True
 
                     with open ("marketplace_items.json", "r+") as file:
                         file_data = json.load(file)
                         file_data.append(new_item)
                         file.seek(0)
                         json.dump(file_data, file, indent=4)
+                        return True
                 else:
-                    print("\n Item is already listed on the marketplace")
-                    return
-            else:
-                print("\n No such item exists in your inventory")
-                return
+                    print(f"\n {colored('Item is already listed on the marketplace', 'red', attrs=['reverse', 'blink'])}")
+                    input(f"\n {colored('Press any key to return to the menu', 'blue')} \n")
+                    return False
+
+        print(f"\n {colored('No such item exists in your inventory', 'red', attrs=['reverse', 'blink'])}")
+        input(f"\n {colored('Press any key to return to the menu', 'blue')} \n")
+        return False
 
         

@@ -61,9 +61,9 @@ class Account():
             "lastname": self._lastname,
             "password": self._password,
             "currency": self._currency,
-            "items": self._items 
-            }
-        
+            "items": self._items
+            }     
+
         if new_account:
             with open ("accounts.json", "r+") as file:
                 accounts = json.load(file)
@@ -76,7 +76,7 @@ class Account():
                 for account in accounts:
                     if account["username"] == self._username:
                         account["currency"] = self._currency
-                        account["items"][0] = self._items
+                        account["items"] = self._items
                     
             with open ("accounts.json", "w") as file:
                 json.dump(accounts, file, indent=4)

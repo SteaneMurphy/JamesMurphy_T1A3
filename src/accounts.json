@@ -7,14 +7,13 @@
         "lastname": "Thompson",
         "password": "howdyABC123!",
         "currency": 1430,
-        "items": [
+        "items": 
             {
                 "small sword": false,
                 "lockpick": false,
                 "Thunderfury, Blessed Blade of the Windseeker": true,
                 "leather boots": true
             }
-        ]
     },
     {
         "username": "Twinkletoe McSparklepants",
@@ -24,15 +23,14 @@
         "lastname": "Parker",
         "password": "howdyABC123!",
         "currency": 15956,
-        "items": [
+        "items": 
             {
                 "gnarled staff": false,
                 "celestial silk robes": true,
                 "mana potion": false,
                 "cloth sandals": true,
                 "Luminous Locket of Serenity": true
-            }
-        ]
+            } 
     },
     {
         "username": "Gigglesnort Goblingrub",
@@ -42,27 +40,25 @@
         "lastname": "Wilson",
         "password": "howdyABC123!",
         "currency": 30,
-        "items": [
+        "items": 
             {
                 "glittering mace": true,
                 "steel boots": false,
                 "heavy breastplate": false,
                 "Rainbow Ring of Multifaceted Powers": true
             }
-        ]
     },
     {
         "username": "test",
-        "server": "test land",
+        "server": "testserver",
         "email": "test@test.com",
         "firstname": "tester",
-        "lastname": "testy",
+        "lastname": "tester",
         "password": "howdyABC123!",
         "currency": 1000,
-        "items": [
+        "items": 
             {
                 "long sword": false
             }
-        ]
     }
 ]
