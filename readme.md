@@ -274,6 +274,18 @@ __PEP8__ - For code formatting, language usuage and best practice
 
 - [**Link To PEP8 Guide**](https://peps.python.org/pep-0008/)
 
+## ${\textsf{\color{blue}REFLECTION}}$
+
+Once production started, it became obvious that there needed to be an intermediate class to hold user account information. To prevent repitition, once a user logged into the system, their information was stored locally in an instance of the Account class.
+
+The user's inventory and currency could easily be looked up, returned and adjusted without having to do expensive file I/O.
+
+Once a major change happened, the user's account information could be pushed to the accounts.json database, updaitng multiple changes in one function rather than multiple times.
+
+The singletone patters was particulary useful in this case, each application session acted as an instance for that user. Because of this, only one Menu, Verify and Main class were required.
+
+Moving forward to similar projects, thinking further about how data will be transferred and stored during planning will help highlight data structures and classes not previously realised.
+
 ## ${\textsf{\color{blue}REFERENCES}}$
 
 Damnever, 2023, Automatically create 'file-requirements.txt', _StackOverflow_, web log post, 22 June, viewed 10 May 2024, 
