@@ -264,6 +264,37 @@ The only system requirement is a modern terminal like Ubuntu and python3.10 or g
 
 Please run this application in a full-screen terminal
 
+### ${\textsf{\color{darkorange}4 }}$ USER LOG IN
+
+This application mimics a marketplace that is accessable by existing game characters in an online world. If you try to sign up with a username and server name that is not already on the server list, the system will prevent you from creating an account.
+
+For this reason, I have provided existing accounts that can be used for login. Alternatively, you can add your own existing account to the 'character_server_list.json' manually.
+
+### ACCOUNTS THAT CAN LOGIN:
+
+- username: Grumblefizz Goodbarrel
+    - email: grumblefizz.goodbarrel@enchantedemporium.com
+    - password: howdyABC123!
+
+- username: Twinkletoe McSparklepants
+    - email: twinkletoe.mcsparklepants@mythicalmarketplace.com
+    - password: howdyABC123!
+
+- username: Gigglesnort Goblingrub
+    - email: gigglesnort.goblingrub@fantasyforsale.net
+    - password: howdyABC123!
+
+- username: testaccount
+    - email: test@test.com
+    - password: howdyABC123!
+
+### CHARACTERS FOR SIGNUP:
+
+Use these accounts to test the SIGNUP feature, same account can be used for the LOGIN feature afterwards
+
+- username: testaccount2
+    - server: testserver2
+
 ## ${\textsf{\color{blue}STYLE GUIDES}}$
 
 <img src="./docs/PythonLogo.png" width="200" />

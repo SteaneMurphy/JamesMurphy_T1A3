@@ -103,7 +103,6 @@ class Verification:
 
         for item, value in account_items.items():
             # check if item is already listed
-            print(item)
             if item == item_name:
                 if account_items[item] != True:
                     account_items[item] = True

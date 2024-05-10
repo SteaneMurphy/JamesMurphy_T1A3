@@ -14,5 +14,9 @@
     {
         "username": "testaccount",
         "server": "testserver"
+    },
+    {
+        "username": "testaccount2",
+        "server": "testserver2"
     }
 ]

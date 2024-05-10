@@ -6,14 +6,13 @@
         "firstname": "Theodore",
         "lastname": "Thompson",
         "password": "howdyABC123!",
-        "currency": 1430,
-        "items": 
-            {
-                "small sword": false,
-                "lockpick": false,
-                "Thunderfury, Blessed Blade of the Windseeker": true,
-                "leather boots": true
-            }
+        "currency": 30000,
+        "items": {
+            "small sword": false,
+            "lockpick": false,
+            "Thunderfury, Blessed Blade of the Windseeker": true,
+            "leather boots": true
+        }
     },
     {
         "username": "Twinkletoe McSparklepants",
@@ -22,15 +21,14 @@
         "firstname": "Penelope",
         "lastname": "Parker",
         "password": "howdyABC123!",
-        "currency": 15956,
-        "items": 
-            {
-                "gnarled staff": false,
-                "celestial silk robes": true,
-                "mana potion": false,
-                "cloth sandals": true,
-                "Luminous Locket of Serenity": true
-            } 
+        "currency": 30000,
+        "items": {
+            "gnarled staff": false,
+            "celestial silk robes": true,
+            "mana potion": false,
+            "cloth sandals": true,
+            "Luminous Locket of Serenity": true
+        }
     },
     {
         "username": "Gigglesnort Goblingrub",
@@ -39,26 +37,24 @@
         "firstname": "Ethan",
         "lastname": "Wilson",
         "password": "howdyABC123!",
-        "currency": 30,
-        "items": 
-            {
-                "glittering mace": true,
-                "steel boots": false,
-                "heavy breastplate": false,
-                "Rainbow Ring of Multifaceted Powers": true
-            }
+        "currency": 30000,
+        "items": {
+            "glittering mace": true,
+            "steel boots": false,
+            "heavy breastplate": false,
+            "Rainbow Ring of Multifaceted Powers": true
+        }
     },
     {
-        "username": "test",
+        "username": "testaccount",
         "server": "testserver",
         "email": "test@test.com",
         "firstname": "tester",
         "lastname": "tester",
         "password": "howdyABC123!",
-        "currency": 1000,
-        "items": 
-            {
-                "long sword": false
-            }
+        "currency": 40000,
+        "items": {
+            "long sword": false
+        }
     }
 ]
