@@ -2,6 +2,8 @@ import json
 
 
 class Account:
+#holds user information for use, get/set methods used for returning and setting data
+
     def __init__(
         self,
         username,
@@ -61,8 +63,9 @@ class Account:
     @items.setter
     def items(self, new_items):
         self._items = new_items
-        
+
     def update_accounts(self, new_account=False):
+    #updates the accounts.json file with the user's account information
         updated_information = {
             "username": self._username,
             "server": self._server,
@@ -75,7 +78,7 @@ class Account:
         }
 
         if new_account:
-            with open("accounts.json","r+", encoding="utf-8") as file:
+            with open("accounts.json", "r+", encoding="utf-8") as file:
                 accounts = json.load(file)
                 accounts.append(updated_information)
                 file.seek(0)

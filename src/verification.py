@@ -5,10 +5,10 @@ from account import Account
 
 
 class Verification:
-#this class verifies and validates user information
+    # this class verifies and validates user information
 
     def character_exists(self, username, server):
-    #checks that character and server exist on game server (character_server_list.json)
+        # checks that character and server exist on game server (character_server_list.json)
         with open("character_server_list.json", "r", encoding="utf-8") as file:
             accounts = json.load(file)
             for account in accounts:
@@ -18,29 +18,29 @@ class Verification:
             return False
 
     def validate_password(self, password):
-    #checks against the regex pattern that the password entered meets the requirements:
-    #1 uppercase, 1 lowercase, 1 number, 1 special character, min. 8 characters
+        # checks against the regex pattern that the password entered meets the requirements:
+        # 1 uppercase, 1 lowercase, 1 number, 1 special character, min. 8 characters
         pattern = (
             "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$"
         )
         regex = re.compile(pattern)
-        #load regex pattern
+        # load regex pattern
         p_match = re.search(regex, password)
-        #compare password to pattern to find match
+        # compare password to pattern to find match
         if p_match:
             return True
         else:
             return False
 
     def confirm_password(self, password, c_password):
-    #checks if the two password entered by the user match
+        # checks if the two password entered by the user match
         if password == c_password:
             return True
         else:
             return False
 
     def verify_account(self, login, password=None, skip_pass=False):
-    #checks that the username/email and password exist and match an account profile
+        # checks that the username/email and password exist and match an account profile
         with open("accounts.json", "r", encoding="utf-8") as file:
             accounts = json.load(file)
             for account in accounts:
@@ -62,7 +62,7 @@ class Verification:
             return False, None
 
     def display_marketplace_items(self):
-    #for each item in marketplace_items.json, display in the terminal
+        # for each item in marketplace_items.json, display in the terminal
         with open("marketplace_items.json", "r", encoding="utf-8") as file:
             file_data = json.load(file)
             i = 1
@@ -74,7 +74,7 @@ class Verification:
             return i
 
     def get_item(self, selection):
-    #return the specific item details from marketplace
+        # return the specific item details from marketplace
         with open("marketplace_items.json", "r", encoding="utf-8") as file:
             items = json.load(file)
             return (
@@ -84,7 +84,7 @@ class Verification:
             )
 
     def remove_item(self, selection):
-    #remove the specific item from the marketplace
+        # remove the specific item from the marketplace
         with open("marketplace_items.json", "r", encoding="utf-8") as file:
             items = json.load(file)
             del items[selection - 1]
@@ -93,7 +93,7 @@ class Verification:
             json.dump(items, file, indent=4)
 
     def add_item(self, username, account_items, item_name, price, duration):
-    #add a specific item to the marketplace
+        # add a specific item to the marketplace
         new_item = {
             "name": item_name,
             "price": price,
@@ -102,15 +102,15 @@ class Verification:
         }
 
         for item, value in account_items.items():
-        #check if item is already listed
+            # check if item is already listed
             print(item)
             if item == item_name:
                 if account_items[item] != True:
                     account_items[item] = True
-                    #mark item as listed
+                    # mark item as listed
 
                     with open("marketplace_items.json", "r+", encoding="utf-8") as file:
-                    #add item to marketplace_items.json
+                        # add item to marketplace_items.json
                         file_data = json.load(file)
                         file_data.append(new_item)
                         file.seek(0)

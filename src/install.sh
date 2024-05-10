@@ -9,6 +9,7 @@ print_help() {
 #checks for virtual environemnt and installs dependecies
 install() {
     #if venv already exists
+    echo "Checking if virtual environment already exists..."
     if [ -d ".venv" ]; then
         echo "Virtual environment already exists in directory"
     #install venv
@@ -23,13 +24,16 @@ install() {
     fi
 
     #activate venv
+    echo "Activating virtual environment..."
     source ".venv/bin/activate"
     echo "Virtual environment activated"
     
     #upgrade pip installer
+    echo "Checking for latest PIP version..."
     pip install -U pip
 
-    #install dependecies
+    #install dependencies
+    echo "Installing any dependencies..."
     if [ -f "requirements.txt" ]; then
         pip install -r ./requirements.txt
     fi
@@ -38,6 +42,7 @@ install() {
 }
 
 run(){
+    echo "Running marketplace.py..."
     python3 marketplace.py
 }
 

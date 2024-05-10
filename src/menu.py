@@ -3,16 +3,16 @@ from ascii_magic import AsciiArt
 
 
 class Menu:
-#this class displays menus and deals with user menu selections
+    # this class displays menus and deals with user menu selections
 
     def __init__(self, main_instance):
-        #reference to instance of the Main class
+        # reference to instance of the Main class
         self.main_instance = main_instance
 
     def display_menu(self, user_logged):
-        #one of two menus displayed depending on whether the user is logged in or not
+        # one of two menus displayed depending on whether the user is logged in or not
         if user_logged is False:
-        #main menu - user not logged in
+            # main menu - user not logged in
             header = """ 
                ___                                  ______                           _               
               /   |  ______________ _____  ___     / ____/___ ___  ____  ____  _____(_)_  ______ ___ 
@@ -43,7 +43,7 @@ class Menu:
             selection = input(f"\n {colored('>>>', 'red')} ")
             self.main_menu_selection(selection)
         else:
-        #logged menu - user logged in
+            # logged menu - user logged in
             print(
                 f"\n ******************************************** {colored('LOGGED', 'cyan')} ***"
             )
@@ -66,7 +66,7 @@ class Menu:
             self.logged_menu_selection(selection)
 
     def main_menu_selection(self, selection):
-    #user main menu selection
+        # user main menu selection
         match selection:
             case "1":
                 self.main_instance.log_in()
@@ -75,7 +75,7 @@ class Menu:
             case "3":
                 self.main_instance.quit()
             case _:
-            #all invalid input handled by default case
+                # all invalid input handled by default case
                 print(
                     f"\n {colored('This is not a valid menu option, please select from the availble options', 'red', attrs=['reverse', 'blink'])}"
                 )
@@ -83,7 +83,7 @@ class Menu:
                 self.display_menu(False)
 
     def logged_menu_selection(self, selection):
-    #user logged menu selection
+        # user logged menu selection
         match selection:
             case "1":
                 self.main_instance.display_currency()
@@ -96,7 +96,7 @@ class Menu:
             case "5":
                 self.main_instance.log_out()
             case _:
-            #all invalid input handled by default case
+                # all invalid input handled by default case
                 print(
                     f"\n {colored('This is not a valid menu option, please select from the availble options', 'red', attrs=['reverse', 'blink'])}"
                 )
@@ -104,7 +104,7 @@ class Menu:
                 self.display_menu(True)
 
     def display_marketplace(self, verify):
-    #displays the marketplace menu
+        # displays the marketplace menu
         print(
             f" ---------------------------------------------{colored('ARCANE EMPORIUM - ITEMS FOR SALE', 'red')}---\n"
         )
@@ -113,7 +113,7 @@ class Menu:
             f"\n ---{colored('ARCANE EMPORIUM - ITEMS FOR SALE', 'red')}---------------------------------------------"
         )
         while True:
-        #while loop handle invalid input, try/except raises the error and checks for correct typing
+            # while loop handle invalid input, try/except raises the error and checks for correct typing
             print("\n Enter number to select item")
             try:
                 selection = int(input(f"\n {colored('>>>', 'red')} "))
@@ -124,7 +124,7 @@ class Menu:
             else:
                 break
         if selection == 0 or selection > list_length - 1:
-            #check length of marketplace list, if user selects above that value, return invalid
+            # check length of marketplace list, if user selects above that value, return invalid
             print(
                 f"\n {colored('There is no item listed in that slot', 'red', attrs=['reverse', 'blink'])}"
             )
@@ -133,7 +133,7 @@ class Menu:
             return selection
 
     def select_another_item(self):
-    #prompt user to select another item in marketplace
+        # prompt user to select another item in marketplace
         print("\n Would you like to select another item?")
         confirm = input(f" {colored('(Y / Yes) >>>', 'red')} ")
         if confirm.lower() == "y" or confirm.lower() == "yes":
@@ -142,7 +142,7 @@ class Menu:
             self.display_menu(True)
 
     def sell_another_item(self):
-    #prompt user to sell another item
+        # prompt user to sell another item
         print("\n Would you like to sell another item?")
         confirm = input(f" {colored('(Y / Yes) >>>', 'red')} ")
         if confirm.lower() == "y" or confirm.lower() == "yes":
